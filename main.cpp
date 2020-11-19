@@ -10,13 +10,16 @@ int main() {
   cout << sizeof(char)<< "\n";
   cout << sizeof(bool)<< "\n";
 
-int value = -137; // Значение числа
-	unsigned int order = 32; // Количество разрядов
-	unsigned int mask = 1 << (order - 1); // Маска побитового сравнения
+ int value; 
+        cout << "Введите целое число:";
+        cin >> value;
+
+	unsigned int order = 32; 
+	unsigned int mask = 1 << (order - 1); 
 	for (int i = 1; i <= order; i++)
 	{
 		putchar(value & mask ? '1' : '0'); 
-		value <<= 1; // Побитовый сдвиг числа
+		value <<= 1; 
 
     
 		switch (i){
@@ -35,17 +38,22 @@ int value = -137; // Значение числа
 
      } 
 	}
+
 cout << '\n';
+
+        
 union {
 int value1;
-float numb_f = 3.14;
+float numb_f;
 };
-	order = 32; // Количество разрядов
-	mask = 1 << (order-1); // Маска побитового сравнения
+cout << "Введите число с плавающей точкой:";
+        cin >> numb_f;
+	order = 32; 
+	mask = 1 << (order-1); 
 	for (int i = 1; i <= order; i++)
 	{
 		putchar(value1 & mask ? '1' : '0'); 
-		value1 <<= 1; // Побитовый сдвиг числа
+		value1 <<= 1; 
 		switch (i){
     case 1:
 		 putchar(' ');
@@ -58,14 +66,17 @@ float numb_f = 3.14;
   cout << '\n';
 union {
 int value2;
-double numb_f1 = 3.14;
+double d2;
 };
-	order = 64; // Количество разрядов
-	mask = 1 << (order-1); // Маска побитового сравнения
+cout << "Введите число с плавающей точкой:";
+ cin >> d2;
+
+	order = 64; 
+	mask = 1 << (order-1); 
 	for (int i = 1; i <= order; i++)
 	{
 		putchar(value2 & mask ? '1' : '0'); 
-		value2 <<= 1; // Побитовый сдвиг числа
+		value2 <<= 1; 
 		switch (i){
     case 1:
 		 putchar(' ');
